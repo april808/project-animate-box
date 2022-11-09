@@ -1,0 +1,169 @@
+//設定字體
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display')
+
+*,*:before,*:after
+  font-family: 'Playfair Display', 'Microsoft JhengHei'/*微軟正黑體英文*/
+  border: solid 1px #000
+  position: relative
+
+// 顏色變數：
+$colorBlueRoofLight: #6fc5ff
+$colorBlueRoofDark: #0058ff
+
+$colorGreyLight: #fafaf5
+$colorGreyNormal: #e3e2cf
+$colorGreyDark: #bebdaf
+$colorBackground: #2C2F36
+
+$colorShadowBlue: #7cb1ff
+$colorShadowBlueLight: #8dc9fc
+
+$colorWindowGrey: #534d4d
+
+$roofGradient: linear-gradient(150deg,$colorBlueRoofLight,$colorBlueRoofDark)
+$sceneGradient: linear-gradient(#1D2B49,#1A45A0,#91cdff,#fff)
+
+// Mixins：
+@mixin size($w,$h:$w,$bdrs:0)
+  width: $w
+  height: $h
+  border-radius: $bdrs
+
+@mixin flex($j:center,$a:center)
+  display: flex
+  justify-content: $j
+  align-items: $a
+  
+@mixin abpos($l:initial,$t:initial)
+  position: absolute
+  left: $l
+  top: $t
+  
+// 開始
+html,body
+  +size(100%)
+  margin: 0
+  +flex
+  
+.scene
+  +size(700px,500px,15px)
+  .lefttopText
+    margin:
+      left: 30px
+      top: 30px
+    h1
+      font-size: 36px
+      letter-spacing: 3px
+      margin-top: 0
+      font-weight: 300
+    h5
+      font-size: 14px
+      letter-spacing: 1px
+      opacity: 0.6
+      margin-bottom: 0
+      font-weight: 300
+    p
+      font-size: 14px
+      line-height: 24px
+      letter-spacing: 2px
+      opacity: 0.6
+      
+    .blueblock
+      +size(20px,25px)
+      
+.building
+  position: absolute
+  right: 0
+  bottom: 0
+  transform: scale(0.95)
+  
+[class^="house"]
+  position: absolute
+  bottom: 0
+  right: 0
+  
+.house1
+  +size(180px,200px)
+  
+  .window
+    +size(40px,100px,20px)
+    margin-top: 40px
+    margin-left: 70px
+    +flex
+    flex-direction: column
+    
+    .circle
+      +size(20px,20px,50%)
+      margin: 4px
+      margin-left: 10px
+      
+.house2
+  +size(240px,170px)
+  right: 130px
+  
+  .door
+    +size(40px,80px,20px 20px 0 0)
+    position: absolute
+    bottom: 0
+    left: 45px
+    
+.house3
+  +size(320px,300px)
+  +flex
+  
+  .wall
+    flex: 1
+    height: 100%
+    +flex(center,flea-start)
+    
+    .window
+      +size(24px,50px,12px 12px 0 0)
+      margin-top: 30px
+      
+    &:before
+      content: ""
+      display: block
+      +size(105%,20px)
+      position: absolute
+      top: -20px
+      left: 50%
+      transform: translateX(-50%)
+    
+    =wall($flex)
+      flex: $flex
+      
+    &:nth-child(1)
+      +wall(10)
+    &:nth-child(2)
+      +wall(14)
+    &:nth-child(3)
+      +wall(10)
+    
+=halfCir($r)
+  +size($r*2,$r,$r $r 0 0)
+  
+.roof
+  +halfCir(150px)
+  position: absolute
+  top: -170px
+  right: 5px
+  
+  .rooftop
+    +halfCir(14px)
+    +abpos(50%,-14px)
+    transform: translateX(-50%)
+    
+  .cross
+    +size(4px,30px)
+    position: absolute
+    left: 50%
+    transform: translateX(-50%)
+    bottom: 10px
+    &:before
+      content: ""
+      display: block
+      +size(20px,4px)
+      position: absolute
+      left: 50%
+      transform: translateX(-50%)
+      bottom: 15px
