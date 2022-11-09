@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Playfair+Display");
 *, *:before, *:after {
   font-family: "Playfair Display", "Microsoft JhengHei";
-  border: solid 1px #000;
   position: relative;
 }
 
@@ -13,12 +12,18 @@ html, body {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #2C2F36;
+  color: white;
 }
 
 .scene {
   width: 700px;
   height: 500px;
   border-radius: 15px;
+  background: linear-gradient(#1D2B49, #1A45A0, #91cdff, #fff);
+  background-size: 100% 300%;
+  background-position: 0 0;
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.3);
 }
 .scene .lefttopText {
   margin-left: 30px;
@@ -47,6 +52,7 @@ html, body {
   width: 20px;
   height: 25px;
   border-radius: 0;
+  background-color: #7cb1ff;
 }
 
 .building {
@@ -66,11 +72,16 @@ html, body {
   width: 180px;
   height: 200px;
   border-radius: 0;
+  background-color: #fafaf5;
+  box-shadow: inset -50px 0 0 #e3e2cf;
+  z-index: 1;
 }
 .house1 .window {
   width: 40px;
   height: 100px;
   border-radius: 20px;
+  background-color: #e3e2cf;
+  box-shadow: inset 8px 5px 0 #bebdaf;
   margin-top: 40px;
   margin-left: 70px;
   display: flex;
@@ -82,6 +93,7 @@ html, body {
   width: 20px;
   height: 20px;
   border-radius: 50%;
+  background-color: #534d4d;
   margin: 4px;
   margin-left: 10px;
 }
@@ -91,6 +103,9 @@ html, body {
   height: 170px;
   border-radius: 0;
   right: 130px;
+  z-index: 2;
+  background-color: #fafaf5;
+  box-shadow: inset 0px 15px #8dc9fc, inset -72px 0px #e3e2cf;
 }
 .house2 .door {
   width: 40px;
@@ -99,6 +114,8 @@ html, body {
   position: absolute;
   bottom: 0;
   left: 45px;
+  background-color: #2C2F36;
+  box-shadow: inset 10px 2px #7cb1ff;
 }
 
 .house3 {
@@ -108,6 +125,8 @@ html, body {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #fafaf5;
+  z-index: 0;
 }
 .house3 .wall {
   flex: 1;
@@ -121,6 +140,7 @@ html, body {
   height: 50px;
   border-radius: 12px 12px 0 0;
   margin-top: 30px;
+  background-color: #2C2F36;
 }
 .house3 .wall:before {
   content: "";
@@ -132,15 +152,44 @@ html, body {
   top: -20px;
   left: 50%;
   transform: translateX(-50%);
+  background-color: inherit;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 .house3 .wall:nth-child(1) {
+  background-color: #fafaf5;
   flex: 10;
+  /*&:before
+  * background-color: $color*/
+}
+.house3 .wall:nth-child(1) .window {
+  box-shadow: inset 8px 2px #7cb1ff;
+}
+.house3 .wall:nth-child(1):before {
+  z-index: 1;
 }
 .house3 .wall:nth-child(2) {
+  background-color: #e3e2cf;
   flex: 14;
+  /*&:before
+  * background-color: $color*/
+}
+.house3 .wall:nth-child(2) .window {
+  box-shadow: inset 0px 2px #7cb1ff;
+}
+.house3 .wall:nth-child(2):before {
+  z-index: 2;
 }
 .house3 .wall:nth-child(3) {
+  background-color: #bebdaf;
   flex: 10;
+  /*&:before
+  * background-color: $color*/
+}
+.house3 .wall:nth-child(3) .window {
+  box-shadow: inset -8px 2px #7cb1ff;
+}
+.house3 .wall:nth-child(3):before {
+  z-index: 1;
 }
 
 .roof {
@@ -150,6 +199,7 @@ html, body {
   position: absolute;
   top: -170px;
   right: 5px;
+  background: linear-gradient(150deg, #6fc5ff, #0058ff);
 }
 .roof .rooftop {
   width: 28px;
@@ -159,6 +209,7 @@ html, body {
   left: 50%;
   top: -14px;
   transform: translateX(-50%);
+  background-color: #fff;
 }
 .roof .cross {
   width: 4px;
@@ -168,6 +219,7 @@ html, body {
   left: 50%;
   transform: translateX(-50%);
   bottom: 10px;
+  background-color: #fff;
 }
 .roof .cross:before {
   content: "";
@@ -179,4 +231,5 @@ html, body {
   left: 50%;
   transform: translateX(-50%);
   bottom: 15px;
+  background-color: #fff;
 }

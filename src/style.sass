@@ -3,7 +3,7 @@
 
 *,*:before,*:after
   font-family: 'Playfair Display', 'Microsoft JhengHei'/*微軟正黑體英文*/
-  border: solid 1px #000
+  // border: solid 1px #000
   position: relative
 
 // 顏色變數：
@@ -44,9 +44,18 @@ html,body
   +size(100%)
   margin: 0
   +flex
+  background-color: $colorBackground
+  color: white
   
 .scene
   +size(700px,500px,15px)
+  
+  background: $sceneGradient
+  background-size: 100% 300%
+  background-position: 0 0
+  
+  box-shadow: 0px 0px 30px rgba(black,0.3)
+  
   .lefttopText
     margin:
       left: 30px
@@ -70,6 +79,7 @@ html,body
       
     .blueblock
       +size(20px,25px)
+      background-color: $colorShadowBlue
       
 .building
   position: absolute
@@ -84,9 +94,16 @@ html,body
   
 .house1
   +size(180px,200px)
+  background-color: $colorGreyLight
+  box-shadow: inset -50px 0 0 $colorGreyNormal
+  z-index: 1
   
   .window
     +size(40px,100px,20px)
+    
+    background-color: $colorGreyNormal
+    box-shadow: inset 8px 5px 0 $colorGreyDark
+    
     margin-top: 40px
     margin-left: 70px
     +flex
@@ -94,23 +111,30 @@ html,body
     
     .circle
       +size(20px,20px,50%)
+      background-color:  $colorWindowGrey
       margin: 4px
       margin-left: 10px
       
 .house2
   +size(240px,170px)
   right: 130px
+  z-index: 2
+  background-color: $colorGreyLight
+  box-shadow: inset 0px 15px $colorShadowBlueLight,inset -72px 0px $colorGreyNormal
   
   .door
     +size(40px,80px,20px 20px 0 0)
     position: absolute
     bottom: 0
     left: 45px
+    background-color: $colorBackground
+    box-shadow: inset 10px 2px $colorShadowBlue
     
 .house3
   +size(320px,300px)
   +flex
-  
+  background-color: $colorGreyLight
+  z-index: 0
   .wall
     flex: 1
     height: 100%
@@ -119,6 +143,7 @@ html,body
     .window
       +size(24px,50px,12px 12px 0 0)
       margin-top: 30px
+      background-color: $colorBackground
       
     &:before
       content: ""
@@ -128,16 +153,25 @@ html,body
       top: -20px
       left: 50%
       transform: translateX(-50%)
+      background-color: inherit/*繼承背景顏色*/
+      box-shadow: 0px 0px 10px rgba(0,0,0,0.1)
     
-    =wall($flex)
+    =wall($color,$flex,$windowPan:0,$z:1)
+      background-color: $color
       flex: $flex
+      /*&:before
+        background-color: $color*/
+      .window
+        box-shadow: inset $windowPan 2px $colorShadowBlue
+      &:before
+        z-index: $z
       
     &:nth-child(1)
-      +wall(10)
+      +wall($colorGreyLight,10,8px,)
     &:nth-child(2)
-      +wall(14)
+      +wall($colorGreyNormal,14,0px,2)
     &:nth-child(3)
-      +wall(10)
+      +wall($colorGreyDark,10,-8px)
     
 =halfCir($r)
   +size($r*2,$r,$r $r 0 0)
@@ -147,11 +181,13 @@ html,body
   position: absolute
   top: -170px
   right: 5px
+  background: $roofGradient
   
   .rooftop
     +halfCir(14px)
     +abpos(50%,-14px)
     transform: translateX(-50%)
+    background-color: #fff
     
   .cross
     +size(4px,30px)
@@ -159,6 +195,7 @@ html,body
     left: 50%
     transform: translateX(-50%)
     bottom: 10px
+    background-color: #fff
     &:before
       content: ""
       display: block
@@ -167,3 +204,4 @@ html,body
       left: 50%
       transform: translateX(-50%)
       bottom: 15px
+      background-color: #fff
