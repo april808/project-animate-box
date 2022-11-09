@@ -24,6 +24,7 @@ html, body {
   background-size: 100% 300%;
   background-position: 0 0;
   box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
 }
 .scene .lefttopText {
   margin-left: 30px;
@@ -232,4 +233,345 @@ html, body {
   transform: translateX(-50%);
   bottom: 15px;
   background-color: #fff;
+}
+
+.allstars {
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+@-webkit-keyframes falling {
+  0%, 100% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 1;
+  }
+  0% {
+    transform: translate(100px, 0);
+  }
+  100% {
+    transform: translate(0px, 200px);
+  }
+}
+@keyframes falling {
+  0%, 100% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 1;
+  }
+  0% {
+    transform: translate(100px, 0);
+  }
+  100% {
+    transform: translate(0px, 200px);
+  }
+}
+.allstars [class^=star] {
+  background-color: #fff;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  -webkit-animation: falling 2s infinite;
+          animation: falling 2s infinite;
+}
+.allstars .star1 {
+  position: absolute;
+  left: 1.7786138602%;
+  top: -3.0219806926%;
+  -webkit-animation-delay: -0.1s;
+          animation-delay: -0.1s;
+}
+.allstars .star2 {
+  position: absolute;
+  left: 94.0321263213%;
+  top: 49.9775649139%;
+  -webkit-animation-delay: -0.2s;
+          animation-delay: -0.2s;
+}
+.allstars .star3 {
+  position: absolute;
+  left: 25.235885374%;
+  top: -28.2801727295%;
+  -webkit-animation-delay: -0.3s;
+          animation-delay: -0.3s;
+}
+.allstars .star4 {
+  position: absolute;
+  left: 16.6829716338%;
+  top: 38.0896005987%;
+  -webkit-animation-delay: -0.4s;
+          animation-delay: -0.4s;
+}
+.allstars .star5 {
+  position: absolute;
+  left: 79.4354348443%;
+  top: -7.4847956724%;
+  -webkit-animation-delay: -0.5s;
+          animation-delay: -0.5s;
+}
+.allstars .star6 {
+  position: absolute;
+  left: 8.9145099556%;
+  top: -16.2227476515%;
+  -webkit-animation-delay: -0.6s;
+          animation-delay: -0.6s;
+}
+.allstars .star7 {
+  position: absolute;
+  left: 48.9411365432%;
+  top: 31.8790742237%;
+  -webkit-animation-delay: -0.7s;
+          animation-delay: -0.7s;
+}
+.allstars .star8 {
+  position: absolute;
+  left: 74.6581914456%;
+  top: -25.689274086%;
+  -webkit-animation-delay: -0.8s;
+          animation-delay: -0.8s;
+}
+.allstars .star9 {
+  position: absolute;
+  left: 30.1615446362%;
+  top: 12.8966920053%;
+  -webkit-animation-delay: -0.9s;
+          animation-delay: -0.9s;
+}
+.allstars .star10 {
+  position: absolute;
+  left: 20.5184652185%;
+  top: 24.2903224418%;
+  -webkit-animation-delay: -1s;
+          animation-delay: -1s;
+}
+.allstars .star11 {
+  position: absolute;
+  left: 18.5241114149%;
+  top: -25.3274699745%;
+  -webkit-animation-delay: -1.1s;
+          animation-delay: -1.1s;
+}
+.allstars .star12 {
+  position: absolute;
+  left: 80.0374855388%;
+  top: 26.5272437888%;
+  -webkit-animation-delay: -1.2s;
+          animation-delay: -1.2s;
+}
+.allstars .star13 {
+  position: absolute;
+  left: 77.7316571383%;
+  top: 32.7971276339%;
+  -webkit-animation-delay: -1.3s;
+          animation-delay: -1.3s;
+}
+.allstars .star14 {
+  position: absolute;
+  left: 70.0864810397%;
+  top: 34.665228944%;
+  -webkit-animation-delay: -1.4s;
+          animation-delay: -1.4s;
+}
+.allstars .star15 {
+  position: absolute;
+  left: 4.6699719165%;
+  top: 13.0503923997%;
+  -webkit-animation-delay: -1.5s;
+          animation-delay: -1.5s;
+}
+.allstars .star16 {
+  position: absolute;
+  left: 37.755450034%;
+  top: 0.8510374973%;
+  -webkit-animation-delay: -1.6s;
+          animation-delay: -1.6s;
+}
+.allstars .star17 {
+  position: absolute;
+  left: 60.5408488405%;
+  top: 5.1793565953%;
+  -webkit-animation-delay: -1.7s;
+          animation-delay: -1.7s;
+}
+.allstars .star18 {
+  position: absolute;
+  left: 20.1371618005%;
+  top: -5.3831585433%;
+  -webkit-animation-delay: -1.8s;
+          animation-delay: -1.8s;
+}
+.allstars .star19 {
+  position: absolute;
+  left: 46.4023472893%;
+  top: 17.7573042296%;
+  -webkit-animation-delay: -1.9s;
+          animation-delay: -1.9s;
+}
+.allstars .star20 {
+  position: absolute;
+  left: 16.1299991438%;
+  top: 32.465303495%;
+  -webkit-animation-delay: -2s;
+          animation-delay: -2s;
+}
+.allstars .star21 {
+  position: absolute;
+  left: 43.8870780199%;
+  top: 7.9320231482%;
+  -webkit-animation-delay: -2.1s;
+          animation-delay: -2.1s;
+}
+.allstars .star22 {
+  position: absolute;
+  left: 14.1748626411%;
+  top: 26.8468500748%;
+  -webkit-animation-delay: -2.2s;
+          animation-delay: -2.2s;
+}
+.allstars .star23 {
+  position: absolute;
+  left: 57.9164807415%;
+  top: 13.8676758594%;
+  -webkit-animation-delay: -2.3s;
+          animation-delay: -2.3s;
+}
+.allstars .star24 {
+  position: absolute;
+  left: 55.5229930017%;
+  top: 8.8720020388%;
+  -webkit-animation-delay: -2.4s;
+          animation-delay: -2.4s;
+}
+.allstars .star25 {
+  position: absolute;
+  left: 30.0564318834%;
+  top: -6.5449028763%;
+  -webkit-animation-delay: -2.5s;
+          animation-delay: -2.5s;
+}
+.allstars .star26 {
+  position: absolute;
+  left: 88.6079339024%;
+  top: -6.9120874796%;
+  -webkit-animation-delay: -2.6s;
+          animation-delay: -2.6s;
+}
+.allstars .star27 {
+  position: absolute;
+  left: 95.8094100937%;
+  top: 8.5675753666%;
+  -webkit-animation-delay: -2.7s;
+          animation-delay: -2.7s;
+}
+.allstars .star28 {
+  position: absolute;
+  left: 86.6128261836%;
+  top: 12.2281103682%;
+  -webkit-animation-delay: -2.8s;
+          animation-delay: -2.8s;
+}
+.allstars .star29 {
+  position: absolute;
+  left: 39.5482435564%;
+  top: 33.5486683748%;
+  -webkit-animation-delay: -2.9s;
+          animation-delay: -2.9s;
+}
+.allstars .star30 {
+  position: absolute;
+  left: 20.7877416328%;
+  top: 32.8069964966%;
+  -webkit-animation-delay: -3s;
+          animation-delay: -3s;
+}
+
+.remind {
+  opacity: 0.2;
+  margin-bottom: 10px;
+  letter-spacing: 2px;
+}
+
+.dayText {
+  display: none;
+}
+
+.sun, .moon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  position: absolute;
+  left: 250px;
+  top: 100px;
+}
+
+.sun {
+  background-color: Gold;
+  box-shadow: 0px 0px 20px rgba(255, 215, 0, 0.5);
+  top: 400px;
+  opacity: 0;
+}
+
+.moon {
+  -webkit-animation: MoonAppear 2s both;
+          animation: MoonAppear 2s both;
+}
+
+@-webkit-keyframes MoonAppear {
+  0% {
+    box-shadow: inset 0px 0px rgba(255, 255, 255, 0.9);
+  }
+  100% {
+    box-shadow: inset 10px -10px 0px rgba(255, 255, 255, 0.9);
+  }
+}
+
+@keyframes MoonAppear {
+  0% {
+    box-shadow: inset 0px 0px rgba(255, 255, 255, 0.9);
+  }
+  100% {
+    box-shadow: inset 10px -10px 0px rgba(255, 255, 255, 0.9);
+  }
+}
+h1, h5, p, .moon, .sun, .scene, .allstars, .blueblock, .building {
+  transition: 2s;
+}
+
+input:checked + .scene {
+  background-position: 0 100%;
+}
+input:checked + .scene .nightText {
+  display: none;
+}
+input:checked + .scene .dayText {
+  display: inline-block;
+}
+input:checked + .scene .allstars {
+  opacity: 0;
+}
+input:checked + .scene h1, input:checked + .scene h5, input:checked + .scene p {
+  color: #222;
+}
+input:checked + .scene .building {
+  filter: brightness(105%);
+}
+input:checked + .scene .moon {
+  top: -100px;
+  opacity: 0;
+}
+input:checked + .scene .sun {
+  top: 100px;
+  opacity: 1;
+}
+input:checked + .scene .blueblock {
+  background-color: #fff;
+}
+
+input {
+  display: none;
 }
