@@ -1,7 +1,6 @@
-# <Project 2> City Box(動態互動城市盒子)
-	
-在網頁寫一座美麗城市 Part3 - 動畫與切換
+# Project Animate-Box(動態互動盒子)
 
 預覽：
 
-1. CodePen URL: [https://codepen.io/april808/pen/oNdaNLa](https://codepen.io/april808/pen/oNdaNLa)
+1. [Weather-Box(動態互動天氣盒子)](https://april808.github.io/project-animate-box/demo1/dist/index.html)
+1. [City Box(動態互動城市盒子)](https://april808.github.io/project-animate-box/demo2/dist/index.html)

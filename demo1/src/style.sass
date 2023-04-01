@@ -1,0 +1,371 @@
+$color_white: #f3f3f3
+$color_yellow: #FFD633
+$color_black: #333
+$color_blue_start: #6096FD
+$color_blue_end: #080742
+$color_rain: #4DACFF
+$color_white_cloud: #f2f9fe
+$color_grey_cloud: #AAB6FB
+$color_yellow_start: #FFCA42
+$color_yellow_end: #FEC196
+
+@mixin size($w,$h)
+  width: $w
+  height: $h
+*
+  // border: solid 2px black
+  position: relative
+  font-family: 'Hind Vadodara', sans-serif,"微軟正黑體"
+
+html,body
+  width: 100%
+  height: 100%
+  margin: 0
+  padding: 0
+  display: flex
+  justify-content: center
+  align-items: center
+  background-color: $color_black
+label
+  cursor: pointer
+
+.daybox
+  width: 50%
+  max-width: 400px
+  background-color: $color_white
+  box-shadow: 0px 0px 20px rgba(black,0.3)
+  border-radius: 35px
+  padding: 20px
+  overflow: hidden
+  cursor: pointer
+  
+  &:hover
+    .bottom
+      padding-top: 5px
+      padding-bottom: 0px
+      height: 80px
+      box-shadow: inset 0px 4px 20px rgba(black,0.25)
+      .future7
+        opacity: 0
+        transition-delay: 0.2s
+    .dayweather
+      opacity: 1
+      top: 0px
+      // transition-delay: 0.7s
+
+.temsvg
+  width: 100%
+  polyline
+    stroke: $color_white
+    stroke-width: 1px
+    fill: none
+    opacity: 0.2
+  text
+    fill: $color_white
+    transform: translateX(-10px)translateY(20px)
+    font-size: 10px
+    opacity: 0
+  circle
+    fill: $color_white
+    opacity: 0.2
+.rain
+  +size(2px,10px)
+  position: absolute
+  left: 45px
+  bottom: 15px
+  animation: raindrop 1s infinite linear
+  background-color: $color_white
+  
+.rain2
+  left: 70px
+  bottom: 20px
+  animation-delay: -0.4s
+.rain3
+  left: 30px
+  bottom: 20px
+  animation-delay: -0.7s
+@keyframes raindrop
+  0%
+    transform: translateY(0px)
+  100%
+    transform: translateY(50px)
+    opacity: 0
+  
+.dayweather .sun
+  animation: minisun 3s infinite linear
+  
+@keyframes minisun
+  0%
+    transform: rotate(0deg)
+    opacity: 1
+  50%
+    transform: rotate(45deg)
+    opacity: 0.4
+  100%
+    transform: rotate(0deg)
+    opacity: 1
+  
+.top
+  height: 300px
+  background: linear-gradient(20deg,$color_blue_start,$color_blue_end)
+  background-size: 100% 300%
+  animation: daylight 20s both
+  border-radius: 20px 20px 0px 0px
+  box-shadow: inset 0px 4px 4px rgba(black,0.25)
+  
+  @keyframes daylight
+    0%
+      background-position: 100% 30%
+    100%
+      background-position: 100% 100%
+  .moon
+    +size(50px,50px)
+    border-radius: 50%
+    // 用陰影來製作月亮
+    box-shadow: 15px -15px
+    position: absolute 
+    right: 40px
+    top: 20px
+    animation: moonmove 20s infinite
+    
+  @keyframes moonmove
+    0%
+      box-shadow: 15px -15px $color_yellow
+      transform: translateX(-15px)translateY(15px)
+    100%
+      box-shadow: -30px 30px $color_yellow
+      transform: translateX(30px)translateY(-30px)
+      
+.cloud
+  +size(100px,36px)
+  position: absolute
+  left: 20px
+  bottom: 50px
+  border-radius: 20px
+  animation: clouddrift 4s infinite linear
+  background-color: rgba($color_white,0.5)
+  box-shadow: 0px 0px 20px rgba(black,0.3)
+  
+  backdrop-filter: blur(2.5px)
+  -webkit-backdrop-filter: blur(2.2px)
+
+  &:before,&:after
+    content: ""
+    background-color: inherit
+    display: block
+    +size(50px,50px)
+    border-radius: 100%
+    position: absolute
+  
+    backdrop-filter: inherit
+    -webkit-backdrop-filter: inherit
+  &:before
+    left: 16px
+    top: -28px
+  &:after
+    left: 35px
+    top: -20px
+@keyframes clouddrift
+  0%
+    transform: translateY(0px)
+  50%
+    transform: translateY(-20px)
+  100%
+    transform: translateY(0px)
+.bottom
+  padding-top: 20px
+  padding-bottom: 10px
+  height: 35px
+  display: flex
+  justify-content: center
+  box-shadow: inset 0px 4px 20px rgba(black,0)
+  border-radius: 0px 0px 20px 20px
+  overflow: hidden
+  transition-duration: 2s
+  .future7
+    position: absolute
+    top: 0px
+    width: 160px
+    text-align: center
+    font-size: 18px
+    
+    margin: 20px auto
+    color: $color_blue_start
+    padding: 5px
+    border-radius: 30px
+    border: 2px solid
+    
+    opacity: 1
+    transition: 0.5s
+    z-index: 2
+  .dayweather
+    width: calc(100% / 7 - 5px)
+    display: inline-block
+    text-align: center
+    opacity: 0
+    top: 20px
+    transition: 0.5s
+    h3
+      font-size: 8px
+      color: rgba($color_black,0.6)
+      font-weight: 400
+      letter-spacing: 1px
+    svg
+      width: 100%
+      max-width: 40px
+      height: 40px
+      .sun
+        fill: $color_yellow
+        stroke: rgba($color_yellow,0.3)
+        stroke-width: 30px
+        stroke-dasharray: 5px
+      .rain
+        stroke: $color_rain
+      .cloud
+        fill: rgba($color_grey_cloud,1)
+        
+/* These transition properties apply on "mouseout" */
+.bottom
+  .future7
+    transition-delay: 1.6s
+.dayweather:nth-child(1)
+  transition-delay: 0.2s
+.dayweather:nth-child(2)
+  transition-delay: 0.4s
+.dayweather:nth-child(3)
+  transition-delay: 0.6s
+.dayweather:nth-child(4)
+  transition-delay: 0.8s
+.dayweather:nth-child(5)
+  transition-delay: 0.9s
+.dayweather:nth-child(6)
+  transition-delay: 1s
+.dayweather:nth-child(7)
+  transition-delay: 1.1s
+.dayweather:nth-child(8)
+  transition-delay: 1.2s
+        
+.text_area
+  display: inline-block
+  position: absolute
+  bottom: 30px
+  left: 50%
+  transform: translateX(-50%)translateY(-30px)
+  color: $color_white
+  text-align: center
+  
+  .temperature
+    font-size: 75px
+    line-height: 80px
+  .infos
+    font-size: 13px
+    opacity: 0.5
+        
+// 點擊後的互動
+.bigsun
+  transition: all .4s
+.moon,.text_area,future7,top
+  transition: .5s
+.cloud
+  transition: 1s
+  transition-delay: 0s
+#switch_night
+  display: none
+#switch_night:checked~.bottom
+  .future7
+    color: darken($color_yellow_end,10)
+#switch_night:checked+.top
+  background: linear-gradient(-20deg,$color_yellow_start,$color_yellow_end)
+  .temsvg
+    polyline
+      stroke: darken($color_yellow_end,10)
+    text,circle
+      fill: darken($color_yellow_end,10)
+  .text_area
+    color: $color_black
+  .moon,.rain
+    opacity: 0
+  .rain
+    animation: raindrop 1s 2 linear
+  .moon
+    top: 5em
+  .cloud
+    box-shadow: 0px 0px 20px lighten($color_yellow_start,10)
+    background-color: rgba(lighten($color_yellow_start,20),0.8)
+    color: $color_blue_start
+    left: calc(100% - 100px - (20px))
+  .bigsun
+    opacity: 1
+    top: 1.3em
+    background-color: white
+    color: darken($color_yellow_end,10)
+    animation: minisun 5s infinite
+    animation-fill-mode: backwards
+
+    
+
+// 太陽繪製
+.bigsun
+    +size(68px,68px)
+    border-radius: 50%
+    box-shadow: 0 0 8px white
+    position: absolute 
+    background-color: transparent
+    color: transparent
+    left: 40px
+    top: -6em
+    opacity: 1
+  
+    &::before
+      content:""
+      width: 20px
+      height: 10px
+      margin: auto
+      position: absolute
+      left: 0
+      right: 0
+      top: 0
+      bottom: 0
+      border-radius: 15px
+      // background-color: #333 /*--定位用--*/
+      box-shadow: 55px 0px 0 1px currentColor,-55px 0 0 1px currentColor /*--currentColor繼承文字顏色--*/
+    &::after
+      content:""
+      width: 10px
+      height: 20px
+      margin: auto
+      position: absolute
+      left: 0
+      right: 0
+      top: 0
+      bottom: 0
+      border-radius: 15px
+      // background-color: #333 /*--定位用--*/
+      box-shadow: 0 55px 0 1px currentColor,0 -55px 0 1px currentColor /*--currentColor繼承顏色--*/
+    & .sunny
+        transform: rotate(45deg)
+        width: 10px
+        height: 20px
+        margin: auto
+        position: absolute
+        left: 0
+        right: 0
+        top: 0
+        bottom: 0
+        border-radius: 15px
+        // background-color: #333 /*--定位用--*/
+        box-shadow: 0 55px 0 1px currentColor,0 -55px 0 1px currentColor /*--currentColor繼承顏色--*/
+        &::after
+          content:""
+          transform: rotate(90deg)
+          width: 10px
+          height: 20px
+          margin: auto
+          position: absolute
+          left: 0
+          right: 0
+          top: 0
+          bottom: 0
+          border-radius: 15px
+          // background-color: #333 /*--定位用--*/
+          box-shadow: 0 55px 0 1px currentColor,0 -55px 0 1px currentColor /*--currentColor繼承顏色--*/
