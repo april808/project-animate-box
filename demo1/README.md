@@ -5,7 +5,7 @@ A Pen created on CodePen.io.
 預覽：
 
 1. CodePen URL: [https://codepen.io/april808/pen/PoRKWoa](https://codepen.io/april808/pen/PoRKWoa).
-1. GitHub: [https://april808.github.io/project-Animate-box/demo1/dist/index.html)
+1. GitHub: [Weather-Box(動態互動天氣盒子)](https://april808.github.io/project-animate-box/demo1/dist/index.html)
 
 說明：
 

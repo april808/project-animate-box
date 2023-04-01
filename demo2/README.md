@@ -5,7 +5,7 @@
 預覽：
 
 1. CodePen URL: [https://codepen.io/april808/pen/oNdaNLa](https://codepen.io/april808/pen/oNdaNLa)
-1. GitHub: [https://april808.github.io/project-Animate-box/demo2/dist/index.html)
+1. GitHub: [City Box(動態互動城市盒子)](https://april808.github.io/project-animate-box/demo2/dist/index.html)
 
 說明：
 
